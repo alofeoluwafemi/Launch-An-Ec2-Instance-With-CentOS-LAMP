@@ -158,13 +158,13 @@ Save and close the file when you are done adding that line. We are now ready to 
 
 `sudo nano /etc/httpd/sites-available/example.com.conf`
 
-``<VirtualHost *:80>
-    DocumentRoot /var/www/html/your_site/public
-    ServerName your_domain
-    <Directory /var/www/html/your_site/>
-        AllowOverride All
-    </Directory>
-</VirtualHost>
+``<VirtualHost *:80>  
+    DocumentRoot /var/www/html/your_site/public  
+    ServerName your_domain  
+    <Directory /var/www/html/your_site/>  
+        AllowOverride All  
+    </Directory>  
+</VirtualHost>  
 ``
 
 
