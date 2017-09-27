@@ -1,8 +1,8 @@
 # Launch-An-Ec2-Instance-With-LAMP
 Dummy Guide To Launch An EC2 Instance With LAMP Server
 
-# References
-https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow
+## References
+https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow  
 https://wiki.centos.org/TipsAndTricks
 
 Bootstrap an AMI with LAMP Server
