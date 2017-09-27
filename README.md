@@ -1,7 +1,7 @@
 # Launch-An-Ec2-Instance-With-LAMP
 Dummy Guide To Launch An EC2 Instance With LAMP Server
 
-#References
+# References
 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow
 https://wiki.centos.org/TipsAndTricks
 
@@ -154,6 +154,7 @@ Save and close the file when you are done adding that line. We are now ready to 
 
 sudo nano /etc/httpd/sites-available/example.com.conf
 
+``
 <VirtualHost *:80>
     DocumentRoot /var/www/html/your_site/public
     ServerName your_domain
@@ -162,6 +163,7 @@ sudo nano /etc/httpd/sites-available/example.com.conf
         AllowOverride All
     </Directory>
 </VirtualHost>
+``
 
 
 sudo ln -s /etc/httpd/sites-available/example.com.conf /etc/httpd/sites-enabled/example.com.conf
