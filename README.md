@@ -102,10 +102,10 @@ sudo mysql_secure_installation
 - Install php7
 
 ``
-//Carefully run the following commands one after the other
-sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml
+//Carefully run the following commands one after the other  
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm  
+sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  
+sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml  
 ``
 - Install git & composer
 
@@ -125,6 +125,7 @@ sudo mv composer.phar /usr/local/bin/composer
 *NB:* The php.ini file reside at /etc/php.ini, its save to back it up before editing the file
 
 
+`//Step 3 is optional and not neccessary at all`
 3. #Create an AMI from an Amazon EC2 Instance
 
 - Right click on instance, click create image -> create
@@ -140,19 +141,22 @@ sudo mv composer.phar /usr/local/bin/composer
 4. Create a vitual host
 To begin, we will need to set up the directory that our virtual hosts will be stored in, as well as the directory that tells Apache that a virtual host is ready to serve to visitors. The sites-available directory will keep all of our virtual host files, while the sites-enabled directory will hold symbolic links to virtual hosts that we want to publish. We can make both directories by typing:
 
-sudo mkdir /etc/httpd/sites-available
-sudo mkdir /etc/httpd/sites-enabled
+`sudo mkdir /etc/httpd/sites-available`  
+`sudo mkdir /etc/httpd/sites-enabled`  
 Note: This directory layout was introduced by Debian contributors, but we are including it here for added flexibility with managing our virtual hosts (as it's easier to temporarily enable and disable virtual hosts this way).
 
 Next, we should tell Apache to look for virtual hosts in the sites-enabled directory. To accomplish this, we will edit Apache's main configuration file and add a line declaring an optional directory for additional configuration files:
 
-sudo nano /etc/httpd/conf/httpd.conf
+`sudo nano /etc/httpd/conf/httpd.conf`
+
+Run this command to install nano editor `sudo yum install nano.x86_64` (This step is optional, if you are comfortable with vi editor, simply go ahead)  
+
 Add this line to the end of the file:
 
-IncludeOptional sites-enabled/*.conf
+`IncludeOptional sites-enabled/*.conf`
 Save and close the file when you are done adding that line. We are now ready to create our first virtual host file.
 
-sudo nano /etc/httpd/sites-available/example.com.conf
+`sudo nano /etc/httpd/sites-available/example.com.conf`
 
 ``
 <VirtualHost *:80>
