@@ -163,8 +163,11 @@ Save and close the file when you are done adding that line. We are now ready to 
 ``<VirtualHost *:80>    
     DocumentRoot /var/www/html/your_site/public    
     ServerName your_domain    
-    <Directory /var/www/html/your_site/>   
-        AllowOverride All  
+    <Directory /var/www/html/your_site/public>   
+        Order allow,deny
+        Allow from all
+        AllowOverride ALL
+        DirectoryIndex index.php
     </Directory>  
 </VirtualHost>``
 
