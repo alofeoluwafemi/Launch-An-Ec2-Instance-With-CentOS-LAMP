@@ -3,7 +3,9 @@ Dummy Guide To Launch An EC2 Instance With LAMP Server
 
 ## References
 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow  
-https://wiki.centos.org/TipsAndTricks
+https://wiki.centos.org/TipsAndTricks  
+https://www.tecmint.com/upgrade-mariadb-5-5-to-10-centos-rhel-debian-ubuntu/  
+https://www.liquidweb.com/kb/how-to-upgrade-mariadb-5-5-to-mariadb-10-0-on-centos-7/  
 
 Bootstrap an AMI with LAMP Server
 =================================
