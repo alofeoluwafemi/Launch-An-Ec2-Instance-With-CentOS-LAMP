@@ -105,8 +105,8 @@ sudo mysql_secure_installation
 
 ``
 //Carefully run the following commands one after the other  
-sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm  
-sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm  
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   &&
+sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   &&
 sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml  
 ``
 - Install git & composer
