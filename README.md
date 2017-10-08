@@ -48,13 +48,13 @@ Apply an IAM password policy
 
 *NB:* Download user credentials(Download.csv) immediately after success
 
-2. #Services EC2 => Launch an instance(virtual server)
+2. Services EC2 => Launch an instance(virtual server)
 
-##Todo: Define EC2 in your own words
+Todo: Define EC2 in your own words
 
 To launch an aws EC2 instance(virtual server), its important we setup a iam role and security group that the instance would make use of. We already created an iam role, next we need to create a security group, to do this:
 
-- Open Ec2 service
+- Open EC2 service
 - On the left nav under network and security section click on security groups
 - Create security group
 - Add inbound rules
@@ -93,18 +93,15 @@ ssh -i  {PATH_TO_PEM_FILE} centos@{INSTANCE_IP_ADDR}
 - Proceed to install php,git,composer,mysql5.7
 
 ``
-sudo yum install mariadb-server mariadb
-sudo systemctl start mariadb
-sudo systemctl enable mariadb
-
-//Carefully follow the prompt step by step to set root password
-sudo mysql_secure_installation
+sudo yum install mariadb-server mariadb  
+sudo systemctl start mariadb  
+sudo systemctl enable mariadb  
+sudo mysql_secure_installation  
 ``
 
 - Install php7
 
-``
-//Carefully run the following commands one after the other  
+``  
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   &&
 sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   &&
 sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml  
@@ -112,35 +109,19 @@ sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstrin
 - Install git & composer
 
 ``
-yum install -y git
+yum install -y git  
 
-//To install composer
-cd /tmp
+cd /tmp  
 
-//Run in silent mode and show error
-curl -sS https://getcomposer.org/installer | php
+curl -sS https://getcomposer.org/installer | php  
 
-//Move it to /usr/local/bin
-sudo mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer  
 ``
 
 *NB:* The php.ini file reside at /etc/php.ini, its save to back it up before editing the file
 
 
-`//Step 3 is optional and not neccessary at all`
-3. #Create an AMI from an Amazon EC2 Instance
-
-- Right click on instance, click create image -> create
-
-- After it is created, it will appear in the AMIs view in AWS Explorer
-
-- In the navigation pane, choose AMIs.
-
-- Select your AMI from the list, and then choose Actions, Modify Image Permissions.
-
-- Choose Public and choose Save.
-
-4. Create a vitual host
+3. Create a vitual host
 To begin, we will need to set up the directory that our virtual hosts will be stored in, as well as the directory that tells Apache that a virtual host is ready to serve to visitors. The sites-available directory will keep all of our virtual host files, while the sites-enabled directory will hold symbolic links to virtual hosts that we want to publish. We can make both directories by typing:
 
 `sudo mkdir /etc/httpd/sites-available`  
