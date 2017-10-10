@@ -1,5 +1,5 @@
-# Launch-An-Ec2-Instance-With-LAMP
-Dummy Guide To Launch An EC2 Instance With LAMP Server
+# Launch An EC2 Instance With LAMP & Setup Environment For Laravel
+Dummy Guide To Launch An EC2 Instance
 
 ## References
 https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow  
