@@ -6,13 +6,14 @@ https://aws.amazon.com/marketplace/pp/B00O7WM7QW?ref=cns_srchrow
 https://wiki.centos.org/TipsAndTricks  
 https://www.tecmint.com/upgrade-mariadb-5-5-to-10-centos-rhel-debian-ubuntu/  
 https://www.liquidweb.com/kb/how-to-upgrade-mariadb-5-5-to-mariadb-10-0-on-centos-7/  
+https://blog.lysender.com/2015/07/centos-7-selinux-php-apache-cannot-writeaccess-file-no-matter-what/
 
 Bootstrap an AMI with LAMP Server
 =================================
 
 *NB:* Create a free AWS account.
 
-1. #Setup Identity and Access Management
+1. Setup Identity and Access Management
 
 Create IAM Role
 ===============
@@ -141,7 +142,9 @@ Save and close the file when you are done adding that line. We are now ready to 
 
 `sudo nano /etc/httpd/sites-available/example.com.conf`
 
-```<VirtualHost *:80>    
+##Setup V-host File
+```
+<VirtualHost *:80>    
     DocumentRoot /var/www/html/your_site/public    
     ServerName your_domain    
     <Directory /var/www/html/your_site/public>   
@@ -150,10 +153,11 @@ Save and close the file when you are done adding that line. We are now ready to 
         AllowOverride ALL
         DirectoryIndex index.php
     </Directory>  
-</VirtualHost>```
+</VirtualHost>
+```
 
 
-sudo ln -s /etc/httpd/sites-available/example.com.conf /etc/httpd/sites-enabled/example.com.conf
+`sudo ln -s /etc/httpd/sites-available/example.com.conf /etc/httpd/sites-enabled/example.com.conf`
 
 
 
