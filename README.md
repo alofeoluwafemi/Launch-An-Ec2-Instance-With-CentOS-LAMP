@@ -72,13 +72,13 @@ To launch an aws EC2 instance(virtual server), its important we setup a iam role
 
 - Check system Log for Instance
 
-``
+```
 #!/bin/bash
 yum update -y
 yum install httpd -y
 systemctl start httpd.service
 systemctl enable httpd.service
-``
+```
 
 - Select General Purpose Storage (There are different types, you can google them)
 
@@ -86,29 +86,29 @@ systemctl enable httpd.service
 
 - ssh into the server
 
-``
+```
 ssh -i  {PATH_TO_PEM_FILE} centos@{INSTANCE_IP_ADDR}
-``
+```
 
 - Proceed to install php,git,composer,mysql5.7
 
-``
+```
 sudo yum install mariadb-server mariadb  
 sudo systemctl start mariadb  
 sudo systemctl enable mariadb  
 sudo mysql_secure_installation  
-``
+```
 
 - Install php7
 
-``  
+```  
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   &&
 sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   &&
 sudo yum install -y mod_php71w php71w-cli php71w-common php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml  
-``
+```
 - Install git & composer
 
-``
+```
 yum install -y git  
 
 cd /tmp  
@@ -116,7 +116,7 @@ cd /tmp
 curl -sS https://getcomposer.org/installer | php  
 
 sudo mv composer.phar /usr/local/bin/composer  
-``
+```
 
 *NB:* The php.ini file reside at /etc/php.ini, its save to back it up before editing the file
 
@@ -141,7 +141,7 @@ Save and close the file when you are done adding that line. We are now ready to 
 
 `sudo nano /etc/httpd/sites-available/example.com.conf`
 
-``<VirtualHost *:80>    
+```<VirtualHost *:80>    
     DocumentRoot /var/www/html/your_site/public    
     ServerName your_domain    
     <Directory /var/www/html/your_site/public>   
@@ -150,7 +150,7 @@ Save and close the file when you are done adding that line. We are now ready to 
         AllowOverride ALL
         DirectoryIndex index.php
     </Directory>  
-</VirtualHost>``
+</VirtualHost>```
 
 
 sudo ln -s /etc/httpd/sites-available/example.com.conf /etc/httpd/sites-enabled/example.com.conf
